@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap; /* квадратики выстраиваются в сетку, если убрать свойство, то пропадут, так как их слишком много*/
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+}
+
+.square {
+  width: 16px;
+  height: 16px;
+  background: #1d1d1d;
+  margin: 2px;
+  box-shadow: 0 0 2px #000;
+  transition: 2s ease;
+}
+
+/* Делаем так, чтобы анимация в 2 секунды была только после того,
+как убрали мышку, когда квадратик пропадает, 
+а не когда и появляется, и пропадает */
+
+/*Конкретно при наведении длительность анимации 0 секунд*/
+.square:hover {
+  transition-duration: 0s;
+}
